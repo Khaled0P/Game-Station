@@ -1,0 +1,29 @@
+.store {
+    background-color: black;
+    padding: 2rem;
+}
+
+
+.games {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: center;
+    gap: 40px;
+}
+
+.card {
+    background-color: #202020;
+    color: white;
+    width: 20rem;
+    height: 18rem;
+    transition: transform .3s ease-in-out;
+}
+
+.card:hover {
+    cursor: pointer;
+    transform: scale(105%);
+}
+
+.gameImage {
+    height: 200px;
+}

@@ -1,0 +1,105 @@
+.home {
+    background-image: url('../../assets/pexels-lucie-liz-3165335.jpg');
+    background-size: cover;
+    overflow: hidden;
+    object-fit: cover;
+    background-attachment: fixed;
+}
+
+
+.header {
+    height: 100vh;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 3px 3px 7px rgba(0, 0, 0, 1), -3px -3px 15px rgba(0, 0, 0, 1);
+}
+
+.header h1 {
+    font-size: 5rem;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header h3 {
+    font-size: 22px;
+    margin: 10px 0;
+    font-weight: bold;
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+
+.carousel {
+    margin: 2rem auto 5rem;
+    width: 85%;
+    height: 450px;
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 20px;
+    box-shadow: 0 0 2em rgb(69, 69, 69);
+
+}
+
+.carouselContainer {
+    width: 100%;
+    height: 100%;
+    /*wink wink*/
+}
+
+.carouselItem {
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel .active {
+    display: flex !important;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    width: 40vw;
+    margin: 3em 2em 3em 5em;
+}
+
+.text h1 {
+    font-size: 2.2rem;
+    font-weight: 300;
+    padding-left: 3rem;
+    text-shadow: 2px 2px 1rem rgb(255, 255, 255), -2px -2px 1rem rgb(255, 255, 255);
+}
+
+.text p {
+    font-family: serif;
+    line-height: 1.4;
+    font-size: 1.1em;
+    padding-left: 3rem;
+}
+
+.image {
+    width: 50vw;
+    margin: 3em 0;
+}
+
+.image img {
+    width: 35vw;
+    display: flex;
+    margin: auto;
+}
+
+.caption {
+    background-color: rgba(0, 0, 0, .8);
+    padding-bottom: 2rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

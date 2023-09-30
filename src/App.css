@@ -1,0 +1,11 @@
+/* override default carousel item style  */
+.carousel-item.active,
+.carousel-item-next,
+.carousel-item-prev {
+    display: flex !important;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+    display: none !important;
+}

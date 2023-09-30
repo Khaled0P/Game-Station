@@ -1,0 +1,40 @@
+.nav {
+    padding: 5px 10px;
+    overflow: hidden;
+    background-color: rgba(22, 28, 46, .8);
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+}
+
+
+.logoImg {
+    border-radius: 50%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgba(255, 255, 255, 0.55);
+    transition: transform .2s ease-in-out;
+}
+
+.logo:hover {
+    color: rgba(255, 255, 255, 0.55);
+    transform: scale(103%);
+}
+
+.mainNav {
+    flex-grow: 1;
+    padding-left: 15px;
+}
+
+.mainNav a {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.mainNav a:hover {
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.55), 1px -1px 10px rgba(255, 255, 255, 0.55);
+}
