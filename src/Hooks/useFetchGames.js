@@ -26,7 +26,9 @@ export default function useFetchGames(filter, getNew = false) {
     };
 
     setIsLoading(true);
-    fetchData();
+    //delay fetch to show off loading animation
+    setTimeout(fetchData, 1000);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter, getNew]);
   return [isLoading, games, error];

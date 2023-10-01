@@ -4,6 +4,7 @@ import useFetchGames from '../../Hooks/useFetchGames';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import styles from './Store.module.css';
+import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
 
 export default function Store() {
   const [page, setPage] = useState(1);
@@ -49,7 +50,7 @@ export default function Store() {
               </Card.Body>
             </Card>
           ))}
-        {isLoading && <div>loading...</div>}
+        {isLoading && <LoadingAnimation />}
       </div>
       <div ref={observerTarget}></div>
     </div>
