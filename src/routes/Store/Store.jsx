@@ -4,7 +4,8 @@ import useFetchGames from '../../Hooks/useFetchGames';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import styles from './Store.module.css';
-import LoadingAnimation from '../LoadingAnimation/LoadingAnimation';
+import LoadingAnimation from '../../components/LoadingAnimation/LoadingAnimation';
+import { motion } from 'framer-motion';
 
 export default function Store() {
   const [page, setPage] = useState(1);
@@ -35,7 +36,17 @@ export default function Store() {
 
   if (error) return <p>{error}</p>;
   return (
-    <div className={styles.store}>
+    <motion.div
+      className={styles.store}
+      initial={{ opacity: 0, translateX: -50, background: 'none' }}
+      animate={{ opacity: 1, translateX: 0, background: '' }}
+      exit={{
+        opacity: 0,
+        translateX: -50,
+        background: 'none',
+        transition: { duration: 0.6 },
+      }}
+    >
       <div className={styles.games}>
         {games &&
           games.map((game) => (
@@ -53,6 +64,6 @@ export default function Store() {
         {isLoading && <LoadingAnimation />}
       </div>
       <div ref={observerTarget}></div>
-    </div>
+    </motion.div>
   );
 }

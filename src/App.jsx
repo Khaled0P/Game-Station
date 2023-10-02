@@ -1,9 +1,15 @@
+import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
-// import Home from './components/Home/Home';
-import Store from './components/Store/Store';
+import NavigationBar from './components/NavigationBar/NavigationBar';
+import AnimatedRoutes from './routes/animatedRoutes/animatedRoutes';
 
 function App() {
-  return <Store />;
+  return (
+    <Router>
+      <NavigationBar />
+      <AnimatedRoutes />
+    </Router>
+  );
 }
 
 export default App;

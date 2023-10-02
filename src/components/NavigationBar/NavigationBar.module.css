@@ -38,3 +38,9 @@
     color: rgba(255, 255, 255, 0.8);
     text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.55), 1px -1px 10px rgba(255, 255, 255, 0.55);
 }
+
+.mainNav a:active,
+.mainNav a:focus {
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: -1px 1px 8px rgba(255, 255, 255, 0.8), 1px -1px 10px rgba(255, 255, 255, 0.8);
+}

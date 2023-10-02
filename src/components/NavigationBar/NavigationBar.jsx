@@ -4,9 +4,10 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../../assets/logo.png';
 import styles from './NavigationBar.module.css';
+import { Link } from 'react-router-dom';
 
 export default function NavigationBar() {
   return (
@@ -24,8 +25,12 @@ export default function NavigationBar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className={styles.mainNav}>
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Store</Nav.Link>
+          <Link className="nav-link" to="/">
+            Home
+          </Link>
+          <Link className="nav-link" to="/store">
+            Store
+          </Link>
         </Nav>
         <Form inline="true">
           <Row>
