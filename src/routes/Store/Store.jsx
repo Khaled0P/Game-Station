@@ -6,10 +6,11 @@ import Card from 'react-bootstrap/Card';
 import styles from './Store.module.css';
 import LoadingAnimation from '../../components/LoadingAnimation/LoadingAnimation';
 import { motion } from 'framer-motion';
-
+import { platformIcons } from '../../PlatformIcons';
+import { Link } from 'react-router-dom';
 export default function Store() {
   const [page, setPage] = useState(1);
-  const [isLoading, games, error] = useFetchGames(`page=${page}`);
+  const [isLoading, games, error] = useFetchGames(`&page=${page}`);
   const observerTarget = useRef(null);
 
   useEffect(() => {
@@ -33,7 +34,6 @@ export default function Store() {
       }
     };
   }, [observerTarget]);
-
   if (error) return <p>{error}</p>;
   return (
     <motion.div
@@ -50,16 +50,35 @@ export default function Store() {
       <div className={styles.games}>
         {games &&
           games.map((game) => (
-            <Card className={styles.card} key={game.id}>
-              <Card.Img
-                variant="top"
-                src={game.background_image}
-                className={styles.gameImage}
-              />
-              <Card.Body>
-                <Card.Title>{game.name}</Card.Title>
-              </Card.Body>
-            </Card>
+            <Link
+              style={{ textDecoration: 'none' }}
+              to="/store/game"
+              state={{ id: game.id, screenshots: game.short_screenshots }}
+              key={game.id}
+            >
+              <Card className={styles.card}>
+                <Card.Img
+                  variant="top"
+                  src={game.background_image}
+                  className={styles.gameImage}
+                />
+                <Card.Body>
+                  <div className={styles.platforms}>
+                    {game.parent_platforms.map(
+                      (platform) =>
+                        platformIcons[platform.platform.name] && (
+                          <img
+                            src={platformIcons[platform.platform.name]}
+                            alt={platform.platform.name}
+                            key={platform.platform.id}
+                          />
+                        )
+                    )}
+                  </div>
+                  <Card.Title>{game.name}</Card.Title>
+                </Card.Body>
+              </Card>
+            </Link>
           ))}
         {isLoading && <LoadingAnimation />}
       </div>

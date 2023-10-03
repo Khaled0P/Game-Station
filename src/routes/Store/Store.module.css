@@ -13,6 +13,7 @@
 
 .card {
     background-color: #202020;
+    border-radius: 1rem;
     color: white;
     width: 20rem;
     height: 18rem;
@@ -26,4 +27,14 @@
 
 .gameImage {
     height: 200px;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.platforms {
+    margin-bottom: 10px;
+}
+
+.platforms img {
+    margin: 0 5px;
 }

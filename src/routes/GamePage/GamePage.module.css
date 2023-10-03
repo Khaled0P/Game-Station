@@ -1,0 +1,77 @@
+.gamePage {
+    padding: 5rem 2rem 2rem;
+}
+
+.header {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.aboutGame {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+}
+
+.carouselContainer {
+    width: 100%;
+}
+
+.carousel {
+    width: 900px;
+    height: 450px;
+}
+
+
+.image img {
+    width: 900px;
+    height: 450px;
+    border-radius: 2rem;
+}
+
+.description {
+    max-height: 300px;
+    padding: 20px 20px 0px;
+    background: linear-gradient(90deg, rgba(26, 26, 26, 0) 0%, rgb(26, 26, 26) 100%);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    overflow: auto;
+    color: rgb(204, 204, 204);
+    box-shadow: rgb(10, 10, 10) 0px 0px 20px;
+    clip-path: inset(0px 0px -30px);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.description::after {
+    content: "";
+    height: 45px;
+    margin-top: -25px;
+    width: 110%;
+    display: block;
+    position: sticky;
+    bottom: -1px;
+    background-image: linear-gradient(transparent, rgb(15, 15, 15));
+    pointer-events: none;
+}
+
+.description::-webkit-scrollbar {
+    display: none;
+}
+
+.more {
+    padding: 20px;
+    background: linear-gradient(90deg, rgba(38, 38, 38, 0) 0%, rgb(38, 38, 38) 100%);
+    border: none;
+    border-radius: 0 0 12px 12px;
+}
+
+.more ul {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 0px;
+    padding: 0px;
+    color: rgb(153, 153, 153);
+    list-style: none;
+    overflow: auto;
+}

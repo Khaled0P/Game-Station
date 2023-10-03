@@ -5,25 +5,16 @@ import useFetchGames from '../../Hooks/useFetchGames';
 import { motion } from 'framer-motion';
 
 export default function Home() {
-  const [isLoading, popularGames, error] = useFetchGames('metacritic=100');
+  const [isLoading, popularGames, error] = useFetchGames('&metacritic=100');
   if (error) return <p>{error}</p>;
   if (popularGames) {
     popularGames.length = 5;
-    console.log(popularGames);
   }
   return (
     <motion.div
       className={styles.home}
-      initial={{
-        opacity: 0,
-        translateX: -50,
-        background: 'none',
-      }}
-      animate={{
-        opacity: 1,
-        translateX: 0,
-        background: '',
-      }}
+      initial={{ opacity: 0, translateX: -50, background: 'none' }}
+      animate={{ opacity: 1, translateX: 0, background: '' }}
       exit={{
         opacity: 0,
         translateX: -50,
