@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../../assets/logo.png';
 import styles from './NavigationBar.module.css';
 import { Link } from 'react-router-dom';
+import Cart from '../Cart/Cart';
 
 export default function NavigationBar() {
   return (
@@ -46,6 +47,7 @@ export default function NavigationBar() {
             </Col>
           </Row>
         </Form>
+        <Cart />
       </Navbar.Collapse>
     </Navbar>
   );

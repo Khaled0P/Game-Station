@@ -1,0 +1,117 @@
+.cart {
+    margin: 3px 30px 0;
+    position: relative;
+}
+
+.cart::before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: -10px;
+}
+
+.cartButton {
+    background-color: inherit;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    background-image: url('../../assets/cart.png');
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    transition: transform .3s ease-in-out;
+}
+
+.cartButton:hover {
+    transform: scale(110%);
+}
+
+.canvas {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+}
+
+.cartCanvas {
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 20px
+}
+
+.cartDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cartItems {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 13px;
+    background-color: rgb(38, 38, 38);
+    border-radius: 10px;
+}
+
+.removeGameBtn {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    align-self: flex-end;
+    height: 22px;
+    width: 22px;
+    background-color: rgb(15, 16, 17);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.gameDetails {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.gameDetails img {
+    flex-shrink: 0;
+    height: 90px;
+    width: 130px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: end;
+}
+
+.total {
+    margin-top: auto;
+    display: flex;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.notification {
+    position: absolute;
+    font-size: 8px;
+    top: 0;
+    left: 20px;
+    background-color: rgb(219, 35, 35);
+    width: 15px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

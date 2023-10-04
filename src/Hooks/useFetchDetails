@@ -22,5 +22,6 @@ export default function useFetchDetails(id) {
     //delay fetch to show off loading animation
     fetchData();
   }, [id]);
+  console.log(details);
   return [isLoading, details, error];
 }

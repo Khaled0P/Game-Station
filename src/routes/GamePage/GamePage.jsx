@@ -6,6 +6,8 @@ import { useLocation } from 'react-router-dom';
 import styles from './GamePage.module.css';
 import './GamePageBootstrap.css';
 import { motion } from 'framer-motion';
+import { useContext } from 'react';
+import { CartContext } from '../../App';
 
 function returnItems(list) {
   return list.map((item, i) => {
@@ -19,6 +21,9 @@ function returnItems(list) {
 export default function GamePage() {
   const location = useLocation();
   const { id, screenshots } = location.state;
+  const { cart, toggleAddToCart } = useContext(CartContext);
+  console.log(cart);
+  const added = cart.find((item) => item.id === id);
   const [isLoading, details, error] = useFetchDetails(id);
   if (isLoading) return <div>loading...</div>;
   if (error) return <div>error...</div>;
@@ -60,7 +65,9 @@ export default function GamePage() {
               <Accordion.Header>More</Accordion.Header>
               <Accordion.Body>
                 <ul>
-                  <li>Website: {details.website}</li>
+                  <li>
+                    <a href={details.website}>Website: {details.website}</a>
+                  </li>
                   <li>Genres: {returnItems(details.genres)}</li>
                   <li>Platforms: {returnItems(details.platforms)}</li>
                   <li>Developers: {returnItems(details.developers)}</li>
@@ -69,6 +76,20 @@ export default function GamePage() {
               </Accordion.Body>
             </Accordion.Item>
           </Accordion>
+          <button
+            className={styles.addToCart}
+            onClick={() => {
+              toggleAddToCart(details);
+            }}
+          >
+            {added ? (
+              <>
+                Added <div className={styles.checkMark}></div>
+              </>
+            ) : (
+              'Add To Cart +'
+            )}
+          </button>
         </div>
       </div>
     </motion.div>
