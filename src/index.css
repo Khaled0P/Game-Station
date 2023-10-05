@@ -3,9 +3,31 @@
   padding: 0;
   box-sizing: border-box;
   line-height: 1.2;
+  scrollbar-color: #202735 #3f3f3f;
+  scrollbar-width: 16px;
 }
 
 #root {
   background-color: black;
   color: white;
+}
+
+/* scrollbar */
+
+
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+
+::-webkit-scrollbar-track {
+  background-color: #3f3f3f;
+  border: 1px solid #161616;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+  background-color: #202735;
 }
