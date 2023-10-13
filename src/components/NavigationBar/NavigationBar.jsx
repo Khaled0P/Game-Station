@@ -1,14 +1,11 @@
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from '../../assets/logo.png';
 import styles from './NavigationBar.module.css';
 import { Link } from 'react-router-dom';
 import Cart from '../Cart/Cart';
+import Search from '../Search/Search';
 
 export default function NavigationBar() {
   return (
@@ -33,20 +30,7 @@ export default function NavigationBar() {
             Store
           </Link>
         </Nav>
-        <Form inline="true">
-          <Row>
-            <Col xs="auto">
-              <Form.Control
-                type="text"
-                placeholder="Search"
-                className=" mr-sm-2"
-              />
-            </Col>
-            <Col xs="auto">
-              <Button type="submit">Search</Button>
-            </Col>
-          </Row>
-        </Form>
+        <Search />
         <Cart />
       </Navbar.Collapse>
     </Navbar>

@@ -1,0 +1,53 @@
+.col {
+    position: relative;
+}
+
+.searchBox {
+    background-color: white;
+    color: black;
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    left: 0;
+    top: 120%;
+    overflow: auto;
+    scrollbar-width: 0;
+    border-radius: 8px;
+}
+
+.searchBox::-webkit-scrollbar {
+    width: 0;
+}
+
+.searchBox img {
+    width: 200px;
+    height: 120px;
+    border-radius: 8px;
+}
+
+.game {
+    font-size: .25rem;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin: 5px;
+}
+
+.game:hover {
+    cursor: pointer;
+    background-color: beige;
+}
+
+.game h4 {
+    font-size: 18px;
+}
+
+.searchInput {
+    width: 310px;
+}
+
+.searchInput:focus,
+.searchInput:active,
+.searchBox {
+    width: 480px;
+}

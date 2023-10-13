@@ -1,4 +1,5 @@
 import Carousel from 'react-bootstrap/Carousel';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './Home.module.css';
 import useFetchGames from '../../Hooks/useFetchGames';
 import { motion } from 'framer-motion';
