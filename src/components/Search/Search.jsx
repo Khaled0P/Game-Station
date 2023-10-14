@@ -3,12 +3,14 @@ import Form from 'react-bootstrap/Form';
 import { useRef, useState } from 'react';
 import useFetchGames from '../../Hooks/useFetchGames';
 import styles from './Search.module.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Search() {
   const [searchValue, setSearchValue] = useState('');
   const inputRef = useRef(null);
   const searchRef = useRef(null);
+  const navigate = useNavigate();
+
   const [isLoading, gamesFound, error] = useFetchGames(
     `&search=${searchValue}`,
     true
@@ -16,6 +18,17 @@ export default function Search() {
   function handleInput(e) {
     setSearchValue(e.target.value);
   }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    navigate('/store/game', {
+      state: {
+        id: gamesFound[0].id,
+        screenshots: gamesFound[0].short_screenshots,
+      },
+    });
+    inputRef.current.blur();
+  };
+
   function clearInput() {
     inputRef.current.value = '';
     setSearchValue('');
@@ -35,7 +48,11 @@ export default function Search() {
 
   if (error) return <p>{error.message}</p>;
   return (
-    <Form inline="true" style={{ position: 'relative' }}>
+    <Form
+      inline="true"
+      style={{ position: 'relative' }}
+      onSubmit={handleSubmit}
+    >
       <Form.Control
         type="text"
         placeholder="Search"
