@@ -110,3 +110,22 @@
     width: 20px;
     height: 20px;
 }
+
+@media (max-width:1200px) {
+    .carousel {
+        width: 100%;
+        height: auto;
+    }
+
+    .image img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .aboutGame {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}

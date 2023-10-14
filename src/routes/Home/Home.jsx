@@ -47,7 +47,6 @@ export default function Home() {
                         src={screenshot.image}
                         alt="game screenshot"
                         key={screenshot.id}
-                        style={{ width: '190px', height: '105px' }}
                       />
                     ))}
                   </div>

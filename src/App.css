@@ -5,7 +5,8 @@
     display: flex !important;
 }
 
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-    display: none !important;
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 10% !important;
 }

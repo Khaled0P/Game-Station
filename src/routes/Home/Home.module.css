@@ -76,7 +76,6 @@
 
 .carouselItem a {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     width: 100%;
     height: 100%;
@@ -137,5 +136,56 @@
 }
 
 .screenShots img {
-    width: 40%;
+    width: 190px;
+    height: 105px;
+}
+
+@media (max-width: 1130px) {
+    .carouselItem a {
+        flex-direction: column;
+        position: relative;
+        padding-top: 1rem;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .image img {
+        width: 80vw;
+        margin-left: initial;
+        margin: auto;
+    }
+
+    .text {
+        width: auto;
+        margin: 1em;
+    }
+
+    .text h1 {
+        position: absolute;
+        font-size: 1.8rem;
+        white-space: nowrap;
+        top: 10px;
+        right: 50%;
+        transform: translateX(50%);
+        padding-left: 0;
+    }
+
+    .text p {
+        margin: 1em auto 2em;
+    }
+
+    .screenShots img {
+        width: 40%;
+        height: 35%;
+    }
+
+}
+
+@media screen and (max-width: 770px) {
+    .header h1 {
+        font-size: 3rem;
+
+    }
 }

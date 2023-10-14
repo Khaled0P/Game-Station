@@ -46,8 +46,8 @@
     width: 310px;
 }
 
-.searchInput:focus,
-.searchInput:active,
-.searchBox {
-    width: 480px;
+@media screen and (max-width:870px) {
+    .searchBox {
+        width: 400px;
+    }
 }

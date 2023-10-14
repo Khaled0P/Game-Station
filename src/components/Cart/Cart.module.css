@@ -115,3 +115,13 @@
     justify-content: center;
     align-items: center;
 }
+
+@media screen and (max-width:770px) {
+    .cartButton {
+        margin: 10px 0;
+    }
+
+    .cart::before {
+        height: 0;
+    }
+}

@@ -21,14 +21,17 @@ export default function Search() {
     setSearchValue('');
   }
   function handleBlur() {
-    searchRef.current.style.display = 'none';
+    if (searchRef.current) searchRef.current.style.display = 'none';
+    inputRef.current.style.width = '310px';
   }
   function handleFocus() {
-    searchRef.current.style.display = 'block';
+    if (searchRef.current) searchRef.current.style.display = 'block';
+    window.innerWidth >= 870
+      ? (inputRef.current.style.width = '480px')
+      : (inputRef.current.style.width = '400px');
   }
 
   if (error) return <p>{error.message}</p>;
-  if (isLoading) return <p>Loading...</p>;
   return (
     <Form inline="true" style={{ position: 'relative' }}>
       <Form.Control

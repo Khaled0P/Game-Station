@@ -20,7 +20,7 @@ export default function NavigationBar() {
         />{' '}
         <span>Game Station</span>
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Toggle aria-controls="basic-navbar-nav" data-bs-theme="dark" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className={styles.mainNav}>
           <Link className="nav-link" to="/">
