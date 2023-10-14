@@ -22,7 +22,6 @@ export default function GamePage() {
   const location = useLocation();
   const { id, screenshots } = location.state;
   const { cart, toggleAddToCart } = useContext(CartContext);
-  console.log(cart);
   const added = cart.find((item) => item.id === id);
   const [isLoading, details, error] = useFetchDetails(id);
   if (isLoading) return <div>loading...</div>;
