@@ -21,8 +21,10 @@ export default function Search() {
     setSearchValue('');
   }
   function handleBlur() {
-    if (searchRef.current) searchRef.current.style.display = 'none';
-    inputRef.current.style.width = '310px';
+    setTimeout(() => {
+      if (searchRef.current) searchRef.current.style.display = 'none';
+      inputRef.current.style.width = '310px';
+    }, 150);
   }
   function handleFocus() {
     if (searchRef.current) searchRef.current.style.display = 'block';
