@@ -13,11 +13,13 @@ export default function Store() {
   const [isLoading, games, error] = useFetchGames(`&page=${page}`);
   const observerTarget = useRef(null);
 
+  //use the intersection observer to detect when we reach bottom of page
   useEffect(() => {
     const observed = observerTarget.current;
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
+          //add a new page to display once we reach bottom
           setPage((p) => p + 1);
         }
       },
