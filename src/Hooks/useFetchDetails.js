@@ -19,7 +19,6 @@ export default function useFetchDetails(id) {
       }
     };
     setIsLoading(true);
-    //delay fetch to show off loading animation
     fetchData();
   }, [id]);
   return [isLoading, details, error];

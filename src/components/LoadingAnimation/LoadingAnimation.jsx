@@ -1,11 +1,7 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import styles from './LoadingAnimation.module.css';
-
-const cards = [];
-for (let i = 0; i < 9; i++) {
-  cards.push(i);
-}
+import PropTypes from 'prop-types';
 
 const Shimmer = () => {
   return (
@@ -15,12 +11,11 @@ const Shimmer = () => {
   );
 };
 
-export default function LoadingAnimation() {
+export default function LoadingAnimation({ container, style }) {
   return (
     <>
-      {cards.map((card) => (
-        <Card className={styles.card} key={card}>
-          <div className={styles.gameImage}></div>
+      {container.map((item) => (
+        <Card style={style} key={item}>
           <Card.Body>
             <Card.Title></Card.Title>
           </Card.Body>
@@ -30,3 +25,8 @@ export default function LoadingAnimation() {
     </>
   );
 }
+
+LoadingAnimation.propTypes = {
+  container: PropTypes.array,
+  style: PropTypes.object,
+};

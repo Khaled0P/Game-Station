@@ -4,6 +4,7 @@ import styles from './Home.module.css';
 import useFetchGames from '../../Hooks/useFetchGames';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import LoadingAnimation from '../../components/LoadingAnimation/LoadingAnimation';
 
 export default function Home() {
   const [isLoading, popularGames, error] = useFetchGames('&metacritic=100');
@@ -14,7 +15,11 @@ export default function Home() {
   return (
     <motion.div
       className={styles.home}
-      initial={{ opacity: 0, translateX: -50, background: 'none' }}
+      initial={{
+        opacity: 0,
+        translateX: -50,
+        background: 'none',
+      }}
       animate={{ opacity: 1, translateX: 0, background: '' }}
       exit={{
         opacity: 0,
@@ -68,7 +73,17 @@ export default function Home() {
         </Carousel>
       )}
       {isLoading && (
-        <div style={{ color: 'white', textAlign: 'center' }}>loading...</div>
+        <LoadingAnimation
+          container={['carousel']}
+          style={{
+            margin: '2rem auto 5rem',
+            width: '85%',
+            minHeight: '450px',
+            backgroundColor: 'rgba(0, 0, 0, .5)',
+            borderRadius: '20px',
+            boxShadow: '0 0 2em rgb(70, 70, 70)',
+          }}
+        />
       )}
     </motion.div>
   );

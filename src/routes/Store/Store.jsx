@@ -8,11 +8,23 @@ import LoadingAnimation from '../../components/LoadingAnimation/LoadingAnimation
 import { motion } from 'framer-motion';
 import { platformIcons } from '../../PlatformIcons';
 import { Link } from 'react-router-dom';
+
 export default function Store() {
   const [page, setPage] = useState(1);
   const [isLoading, games, error] = useFetchGames(`&page=${page}`);
   const observerTarget = useRef(null);
-
+  //loading cards
+  const cards = [];
+  cards.length = 9;
+  cards.fill('card');
+  const cardStyle = {
+    backgroundColor: 'rgba(32, 32, 32, .5)',
+    color: 'white',
+    borderRadius: '1rem',
+    height: '18rem',
+    position: 'relative',
+    overflow: 'hidden',
+  };
   //use the intersection observer to detect when we reach bottom of page
   useEffect(() => {
     const observed = observerTarget.current;
@@ -82,7 +94,7 @@ export default function Store() {
               </Card>
             </Link>
           ))}
-        {isLoading && <LoadingAnimation />}
+        {isLoading && <LoadingAnimation container={cards} style={cardStyle} />}
       </div>
       <div ref={observerTarget}></div>
     </motion.div>
