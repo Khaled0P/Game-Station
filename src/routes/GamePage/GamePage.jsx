@@ -30,14 +30,11 @@ export default function GamePage() {
   return (
     <motion.div
       className={styles.gamePage}
-      initial={{ opacity: 0, translateX: -50, background: 'none' }}
-      animate={{ opacity: 1, translateX: 0, background: '' }}
-      exit={{
-        opacity: 0,
-        translateX: -50,
-        background: 'none',
-        transition: { duration: 0.6 },
-      }}
+      key="gamePage"
+      initial={{ opacity: 0, x: -25 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -25 }}
+      transition={{ duration: 0.6 }}
     >
       {isLoading ? (
         <div className={styles.aboutGame}>

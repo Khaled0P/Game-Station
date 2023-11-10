@@ -1,11 +1,19 @@
 .home {
-    background-image: url('../../assets/pexels-lucie-liz-3165335.jpg');
-    background-size: cover;
     overflow: hidden;
-    object-fit: cover;
-    background-attachment: fixed;
+    position: relative;
 }
 
+.background {
+    background-image: url('../../assets/pexels-lucie-liz-3165335.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
 
 .header {
     height: 100vh;
@@ -16,6 +24,8 @@
     justify-content: center;
     align-items: center;
     text-shadow: 3px 3px 7px rgba(0, 0, 0, 1), -3px -3px 15px rgba(0, 0, 0, 1);
+    position: relative;
+    z-index: 5;
 }
 
 .header::before {
@@ -62,11 +72,13 @@
     color: white;
     font-weight: bold;
     text-shadow: 3px 3px 7px rgba(0, 0, 0, 1), -3px -3px 15px rgba(0, 0, 0, 1);
+    position: relative;
+    z-index: 5;
 }
 
 .carousel {
     margin: 2rem auto 5rem;
-    width: 85%;
+    width: 90%;
     min-height: 450px;
     background-color: rgba(0, 0, 0, .5);
     border-radius: 20px;
@@ -107,13 +119,13 @@
 }
 
 .image {
-    width: 50vw;
-    margin: 4em 0;
+    width: 55vw;
+    align-self: center;
+    display: flex;
 }
 
 .image img {
-    width: 35vw;
-    display: flex;
+    width: 90%;
     margin-left: auto;
 }
 

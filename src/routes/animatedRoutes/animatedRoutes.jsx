@@ -7,7 +7,7 @@ import GamePage from '../GamePage/GamePage';
 const Router = () => {
   const location = useLocation();
   return (
-    <AnimatePresence>
+    <AnimatePresence mode="wait" initial={false}>
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/store/game" element={<GamePage />} />

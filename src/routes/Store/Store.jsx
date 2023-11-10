@@ -16,7 +16,9 @@ export default function Store() {
   //loading cards
   const cards = [];
   cards.length = 9;
-  cards.fill('card');
+  for (let i = 1; i < 9; i++) {
+    cards.push(i);
+  }
   const cardStyle = {
     backgroundColor: 'rgba(32, 32, 32, .5)',
     color: 'white',
@@ -51,15 +53,12 @@ export default function Store() {
   if (error) return <p>{error}</p>;
   return (
     <motion.div
+      key="store"
       className={styles.store}
-      initial={{ opacity: 0, translateX: -50, background: 'none' }}
-      animate={{ opacity: 1, translateX: 0, background: '' }}
-      exit={{
-        opacity: 0,
-        translateX: -50,
-        background: 'none',
-        transition: { duration: 0.6 },
-      }}
+      initial={{ opacity: 0, x: 25 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 25 }}
+      transition={{ duration: 0.6 }}
     >
       <div className={styles.games}>
         {games &&

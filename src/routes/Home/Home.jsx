@@ -14,20 +14,22 @@ export default function Home() {
   }
   return (
     <motion.div
+      key="home"
       className={styles.home}
-      initial={{
-        opacity: 0,
-        translateX: -50,
-        background: 'none',
-      }}
-      animate={{ opacity: 1, translateX: 0, background: '' }}
-      exit={{
-        opacity: 0,
-        translateX: -50,
-        background: 'none',
-        transition: { duration: 0.6 },
-      }}
+      initial={{ opacity: 0, x: -25 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -25 }}
+      transition={{ duration: 0.6 }}
     >
+      {/*remove background during transition to fix background-size
+       property odd behavior on initial transition */}
+      <motion.div
+        className={styles.background}
+        key="background"
+        initial={{ background: 'unset' }}
+        animate={{ background: '' }}
+        transition={{ delay: 0.6 }}
+      ></motion.div>
       <div className={styles.header}>
         <h1>Game Station</h1>
         <h3>Your One-Stop Shop for Gaming Excellence</h3>
