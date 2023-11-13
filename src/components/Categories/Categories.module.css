@@ -1,0 +1,68 @@
+.categories {
+    padding: 6rem 1rem 2rem 2rem;
+    width: 230px;
+    height: 100vh;
+    flex-shrink: 0;
+    overflow: scroll;
+    scrollbar-width: 16px;
+    position: sticky;
+    top: 0;
+}
+
+.categories::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.category {
+    margin-bottom: 1.5rem;
+    text-transform: capitalize;
+}
+
+.category h1 {
+    font-size: 1.75rem;
+}
+
+
+.filter {
+    margin-top: 10px;
+    padding: 10px 5px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.selectedFilter {
+    composes: filter;
+    background-color: rgb(255, 255, 255, .4);
+}
+
+
+.svgContainer {
+    width: 40px;
+    height: 40px;
+    background-color: rgb(32, 32, 32);
+    border-radius: 8px;
+    position: relative;
+    transition: background-color .4s ease-in-out;
+}
+
+.svgContainer svg {
+    width: 80%;
+    height: 80%;
+    fill: white;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.filter:hover .svgContainer {
+    background-color: white;
+}
+
+.filter:hover svg {
+    fill: black;
+}

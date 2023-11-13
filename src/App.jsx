@@ -2,9 +2,8 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import './App.css';
 import NavigationBar from './components/NavigationBar/NavigationBar';
 import AnimatedRoutes from './routes/animatedRoutes/animatedRoutes';
-import { createContext, useState } from 'react';
-
-export const CartContext = createContext();
+import { useState } from 'react';
+import { CartContext } from './components/Contexts/Contexts';
 
 function App() {
   const [cart, setCart] = useState([]);

@@ -7,7 +7,7 @@ import styles from './GamePage.module.css';
 import './GamePageBootstrap.css';
 import { motion } from 'framer-motion';
 import { useContext } from 'react';
-import { CartContext } from '../../App';
+import { CartContext } from '../../components/Contexts/Contexts';
 import LoadingAnimation from '../../components/LoadingAnimation/LoadingAnimation';
 
 function returnItems(list) {

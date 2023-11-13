@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { CartContext } from '../../App';
+import { CartContext } from '../Contexts/Contexts';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './Cart.module.css';

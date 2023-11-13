@@ -1,22 +1,23 @@
 .store {
     background-color: black;
-    padding: 7rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: 230px 1fr;
 }
 
 
 .games {
+    padding: 7rem 2rem 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
     justify-content: center;
-    gap: 40px;
+    gap: 30px;
 }
 
 .card {
     background-color: #202020;
     border-radius: 1rem;
     color: white;
-    /* width: 20rem; */
-    height: 18rem;
+    height: 19rem;
     transition: transform .3s ease-in-out;
 }
 
