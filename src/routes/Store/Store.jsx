@@ -32,35 +32,16 @@ export default function Store() {
     position: 'relative',
     overflow: 'hidden',
   };
+
   //use the intersection observer to detect when we reach bottom of page
   useEffect(() => {
     const observed = observerTarget.current;
-    let intersectionStartTime; //to prevent instant activation on category change
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-
-        if (entry.isIntersecting) {
-          // If the target starts intersecting, record the start time
-          if (!intersectionStartTime) {
-            intersectionStartTime = Date.now();
-          }
-        } else {
-          // If the target is not intersecting, reset the start time
-          intersectionStartTime = null;
-        }
-
-        // Check if the target has been intersecting for a specific duration
-        const intersectionDuration = Date.now() - intersectionStartTime;
-        if (intersectionStartTime && intersectionDuration >= 2000) {
-          setPage((p) => p + 1);
-          // Reset the start time to prevent triggering the action multiple times
-          intersectionStartTime = null;
-        }
-      },
-      { threshold: 0.3 }
-    );
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        //add a new page to display once we reach bottom
+        setPage((p) => p + 1);
+      }
+    });
 
     if (observed) {
       observer.observe(observed);
@@ -71,7 +52,8 @@ export default function Store() {
         observer.unobserve(observed);
       }
     };
-  }, [observerTarget]);
+  }, [games]); // observer target relies on games array
+
   if (error) return <p>{error}</p>;
   return (
     <motion.div
@@ -124,9 +106,11 @@ export default function Store() {
           {isLoading && (
             <LoadingAnimation container={cards} style={cardStyle} />
           )}
-          <div ref={observerTarget}></div>
         </div>
       </div>
+      {/*add a page when target intersects, rendered conditionally
+       to prevent scroll trigger while still loading */}
+      {games && <div ref={observerTarget}></div>}
     </motion.div>
   );
 }
