@@ -23,6 +23,8 @@
 .carousel {
     width: 900px;
     height: 450px;
+    overflow: hidden;
+    border-radius: 2rem;
 }
 
 
