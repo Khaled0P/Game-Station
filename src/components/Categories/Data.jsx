@@ -59,18 +59,18 @@ export const releases = {
       value: `${thirtyDaysAgo},${today}`,
       icon: <Star />,
     },
-    {
-      id: nanoid(),
-      name: 'This week',
-      value: `${startOfWeekDate},${endOfWeekDate}`,
-      icon: <Fire />,
-    },
-    {
-      id: nanoid(),
-      name: 'Next week',
-      value: `${endOfWeekDate},${endOfNextWeekDate}`,
-      icon: <Skip />,
-    },
+    // {
+    //   id: nanoid(),
+    //   name: 'This week',
+    //   value: `${startOfWeekDate},${endOfWeekDate}`,
+    //   icon: <Fire />,
+    // },
+    // {
+    //   id: nanoid(),
+    //   name: 'Next week',
+    //   value: `${endOfWeekDate},${endOfNextWeekDate}`,  //removed until Error handling is implemented
+    //   icon: <Skip />,
+    // },
   ],
 };
 
