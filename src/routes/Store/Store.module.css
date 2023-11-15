@@ -2,16 +2,18 @@
     background-color: black;
     display: grid;
     grid-template-columns: 230px 1fr;
+    position: relative;
 }
 
 
 .games {
     padding: 7rem 2rem 2rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(17.8rem, 1fr));
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
 }
+
 
 .card {
     background-color: #202020;
@@ -38,4 +40,12 @@
 
 .platforms img {
     margin: 0 5px;
+}
+
+@media screen and (max-width: 650px) {
+
+    .store,
+    .games {
+        grid-template-columns: 1fr;
+    }
 }
