@@ -18,13 +18,14 @@
     align-items: center;
     gap: 5px;
     color: rgba(255, 255, 255, 0.55);
-    transition: transform .2s ease-in-out;
 }
 
-.logo:hover {
+/* override bootstrap default hover */
+.logo:hover,
+.logo:focus {
     color: rgba(255, 255, 255, 0.55);
-    transform: scale(103%);
 }
+
 
 .mainNav {
     flex-grow: 1;

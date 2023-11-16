@@ -10,7 +10,7 @@ import Search from '../Search/Search';
 export default function NavigationBar() {
   return (
     <Navbar expand="md" className={styles.nav}>
-      <Navbar.Brand href="#home" className={styles.logo}>
+      <Navbar.Brand className={styles.logo}>
         <img
           alt="Logo"
           src={logo}
