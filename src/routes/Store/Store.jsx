@@ -10,6 +10,7 @@ import { platformIcons } from '../../PlatformIcons';
 import { Link } from 'react-router-dom';
 import Categories from '../../components/Categories/Categories';
 import { GamesContext, FetchContext } from '../../components/Contexts/Contexts';
+import ErrorHandler from '../../components/ErrorHandler/ErrorHandler';
 
 export default function Store() {
   const [page, setPage] = useState(1);
@@ -54,7 +55,6 @@ export default function Store() {
     };
   }, [games]); // observer target relies on games array
 
-  if (error) return <p>{error}</p>;
   return (
     <motion.div
       key="store"
@@ -107,10 +107,11 @@ export default function Store() {
             <LoadingAnimation container={cards} style={cardStyle} />
           )}
         </div>
+        {error && <ErrorHandler games={games} error={error} />}
       </div>
       {/*add a page when target intersects, rendered conditionally
-       to prevent scroll trigger while still loading */}
-      {games && <div ref={observerTarget}></div>}
+       to prevent scroll trigger while still loading and during an error*/}
+      {games && !error && <div ref={observerTarget}></div>}
     </motion.div>
   );
 }

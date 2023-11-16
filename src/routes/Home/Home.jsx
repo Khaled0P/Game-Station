@@ -5,10 +5,10 @@ import useFetchGames from '../../Hooks/useFetchGames';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import LoadingAnimation from '../../components/LoadingAnimation/LoadingAnimation';
+import ErrorHandler from '../../components/ErrorHandler/ErrorHandler';
 
 export default function Home() {
   const [isLoading, popularGames, error] = useFetchGames('&metacritic=100');
-  if (error) return <p>{error}</p>;
   if (popularGames) {
     popularGames.length = 5;
   }
@@ -34,45 +34,55 @@ export default function Home() {
         <h1>Game Station</h1>
         <h3>Your One-Stop Shop for Gaming Excellence</h3>
       </div>
-      <h1 className={styles.carouselHeader}>All Time Top</h1>
       {popularGames && (
-        <Carousel className={styles.carousel} fade="true">
-          {popularGames.map((game) => (
-            <Carousel.Item className={styles.carouselItem} key={game.id}>
-              <Link
-                to="/store/game"
-                state={{ id: game.id, screenshots: game.short_screenshots }}
-              >
-                <div className={styles.image}>
-                  <img src={game.background_image} alt={`${game.name}image`} />
-                </div>
-                <div className={styles.text}>
-                  <h1>{game.name}</h1>
-                  <div className={styles.screenShots}>
-                    {game.short_screenshots.slice(1, 5).map((screenshot) => (
-                      <img
-                        src={screenshot.image}
-                        alt="game screenshot"
-                        key={screenshot.id}
-                      />
-                    ))}
+        <>
+          <h1 className={styles.carouselHeader}>All Time Top</h1>
+          <Carousel className={styles.carousel} fade="true">
+            {popularGames.map((game) => (
+              <Carousel.Item className={styles.carouselItem} key={game.id}>
+                <Link
+                  to="/store/game"
+                  state={{ id: game.id, screenshots: game.short_screenshots }}
+                >
+                  <div className={styles.image}>
+                    <img
+                      src={game.background_image}
+                      alt={`${game.name}image`}
+                    />
                   </div>
-                  <div>
-                    <p>
-                      <b>Genre: </b>
-                      {game.genres[0].name}, {game.genres[1].name}
-                    </p>
-                    <p>
-                      <b>Tags: </b>
-                      {game.tags[0].name}, {game.tags[1].name},
-                      {game.tags[2].name}, {game.tags[4].name}
-                    </p>
+                  <div className={styles.text}>
+                    <h1>{game.name}</h1>
+                    <div className={styles.screenShots}>
+                      {game.short_screenshots.slice(1, 5).map((screenshot) => (
+                        <img
+                          src={screenshot.image}
+                          alt="game screenshot"
+                          key={screenshot.id}
+                        />
+                      ))}
+                    </div>
+                    <div>
+                      <p>
+                        <b>Genre: </b>
+                        {game.genres[0].name}, {game.genres[1].name}
+                      </p>
+                      <p>
+                        <b>Tags: </b>
+                        {game.tags[0].name}, {game.tags[1].name},
+                        {game.tags[2].name}, {game.tags[4].name}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            </Carousel.Item>
-          ))}
-        </Carousel>
+                </Link>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </>
+      )}
+      {error && (
+        <div className={styles.errorContainer}>
+          <ErrorHandler games={popularGames} error={error} />
+        </div>
       )}
       {isLoading && (
         <LoadingAnimation

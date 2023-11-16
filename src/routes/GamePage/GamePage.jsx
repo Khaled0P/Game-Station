@@ -9,6 +9,7 @@ import { motion } from 'framer-motion';
 import { useContext } from 'react';
 import { CartContext } from '../../components/Contexts/Contexts';
 import LoadingAnimation from '../../components/LoadingAnimation/LoadingAnimation';
+import ErrorHandler from '../../components/ErrorHandler/ErrorHandler';
 
 function returnItems(list) {
   return list.map((item, i) => {
@@ -26,7 +27,6 @@ export default function GamePage() {
   const { cart, toggleAddToCart } = useContext(CartContext);
   const added = cart.find((item) => item.id === id);
   const [isLoading, details, error] = useFetchDetails(id);
-  if (error) return <div>error...</div>;
   return (
     <motion.div
       className={styles.gamePage}
@@ -105,6 +105,7 @@ export default function GamePage() {
           </div>
         </>
       )}
+      {error && <ErrorHandler games={details} error={error} />}
     </motion.div>
   );
 }

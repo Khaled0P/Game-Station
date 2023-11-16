@@ -76,7 +76,8 @@
     z-index: 5;
 }
 
-.carousel {
+.carousel,
+.errorContainer {
     margin: 2rem auto 5rem;
     width: 90%;
     min-height: 450px;
@@ -84,6 +85,14 @@
     border-radius: 20px;
     box-shadow: 0 0 2em rgb(70, 70, 70);
 
+}
+
+.errorContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .carouselItem a {
@@ -194,6 +203,7 @@
     }
 
 }
+
 
 @media screen and (max-width: 770px) {
     .header h1 {
