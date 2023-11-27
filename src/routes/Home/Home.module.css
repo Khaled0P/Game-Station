@@ -87,14 +87,6 @@
 
 }
 
-.errorContainer {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
 .carouselItem a {
     display: flex;
     justify-content: center;
@@ -161,11 +153,19 @@
     height: 105px;
 }
 
+.errorContainer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
 @media (max-width: 1130px) {
     .carouselItem a {
         flex-direction: column;
         position: relative;
-        padding-top: 1rem;
+        padding-top: 3rem;
     }
 
     .image {
@@ -199,7 +199,7 @@
 
     .screenShots img {
         width: 40%;
-        height: 35%;
+        height: 160px;
     }
 
 }
@@ -208,6 +208,13 @@
 @media screen and (max-width: 770px) {
     .header h1 {
         font-size: 3rem;
+    }
 
+    .text h1 {
+        font-size: 1.5rem;
+    }
+
+    .screenShots img {
+        height: 100px;
     }
 }
