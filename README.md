@@ -144,12 +144,16 @@ $ yarn
 
 4. [Create a RAWG account](https://rawg.io/apidocs) to get your API key.
 
-5. Replace the current key with your own.
+5. Create .env file in the root directory.
 
-6. Start the project.
+6. Add: VITE_API_KEY = YOUR_KEY_HERE
+
+    **WARNING!** If you're planning on using the API commercially or purchasing a premium subscription, you might want to consider using server environment variables to store the API key. This prevents direct exposure in client-side code, allowing the server to act as an intermediary instead.
+
+7. Start the project.
 
 ```sh
-$ npm start
+$ npm run dev
 or
-$ yarn start
+$ yarn dev
 ```
