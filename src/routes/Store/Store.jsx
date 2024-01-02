@@ -87,16 +87,17 @@ export default function Store() {
                   />
                   <Card.Body>
                     <div className={styles.platforms}>
-                      {game.parent_platforms.map(
-                        (platform) =>
-                          platformIcons[platform.platform.name] && (
-                            <img
-                              src={platformIcons[platform.platform.name]}
-                              alt={platform.platform.name}
-                              key={platform.platform.id}
-                            />
-                          )
-                      )}
+                      {game.parent_platforms &&
+                        game.parent_platforms.map(
+                          (platform) =>
+                            platformIcons[platform.platform.name] && (
+                              <img
+                                src={platformIcons[platform.platform.name]}
+                                alt={platform.platform.name}
+                                key={platform.platform.id}
+                              />
+                            )
+                        )}
                     </div>
                     <Card.Title>{game.name}</Card.Title>
                   </Card.Body>
