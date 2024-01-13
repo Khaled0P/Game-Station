@@ -64,7 +64,8 @@ export default function Home() {
                     <div>
                       <p>
                         <b>Genre: </b>
-                        {game.genres[0].name}, {game.genres[1].name}
+                        {game.genres[0]?.name}
+                        {game.genres[1] && `, ${game.genres[1].name}`}
                       </p>
                       <p>
                         <b>Tags: </b>
