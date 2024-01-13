@@ -3,6 +3,15 @@ import Card from 'react-bootstrap/Card';
 import styles from './LoadingAnimation.module.css';
 import PropTypes from 'prop-types';
 
+export function SearchLoading() {
+  return (
+    <div className={styles.searchLoader}>
+      <div className={styles.outerCircle}></div>
+      <div className={styles.innerCircle}></div>
+    </div>
+  );
+}
+
 const Shimmer = () => {
   return (
     <div className={styles.shimmerWrapper}>
