@@ -4,16 +4,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.header {
-    font-size: 3rem;
-    text-align: center;
+    align-items: center;
 }
 
 .aboutGame {
     display: grid;
     grid-template-columns: 2.5fr 1fr;
+    max-width: 1400px;
 }
 
 .carouselContainer {

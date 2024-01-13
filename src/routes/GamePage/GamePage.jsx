@@ -50,8 +50,8 @@ export default function GamePage() {
         </div>
       ) : (
         <>
-          <h1>{details.name}</h1>
           <div className={styles.aboutGame}>
+          <h1 style={{gridColumnStart:'span 2'}}>{details.name}</h1>
             <div className={styles.carouselContainer}>
               <Carousel className={styles.carousel}>
                 {screenshots.map((screenshot) => (

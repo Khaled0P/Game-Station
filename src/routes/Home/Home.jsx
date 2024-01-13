@@ -35,7 +35,7 @@ export default function Home() {
         <h3>Your One-Stop Shop for Gaming Excellence</h3>
       </div>
       {popularGames && (
-        <>
+        <section className={styles.carouselSection}>
           <h1 className={styles.carouselHeader}>All Time Top</h1>
           <Carousel className={styles.carousel} fade="true">
             {popularGames.map((game) => (
@@ -78,7 +78,7 @@ export default function Home() {
               </Carousel.Item>
             ))}
           </Carousel>
-        </>
+        </section>
       )}
       {error && (
         <div className={styles.errorContainer}>
@@ -91,6 +91,7 @@ export default function Home() {
           style={{
             margin: '2rem auto 5rem',
             width: '85%',
+            maxWidth: '1400px',
             minHeight: '450px',
             backgroundColor: 'rgba(0, 0, 0, .5)',
             borderRadius: '20px',

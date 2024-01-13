@@ -22,7 +22,7 @@ export default function Store() {
   //loading cards
   const cards = [];
   cards.length = 9;
-  for (let i = 1; i < 9; i++) {
+  for (let i = 1; i <= 15; i++) {
     cards.push(i); //to use as card key
   }
   const cardStyle = {

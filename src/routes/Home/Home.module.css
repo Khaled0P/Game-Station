@@ -67,6 +67,18 @@
     font-family: 'Helvetica Neue', sans-serif;
 }
 
+/* Carousel styles */
+
+
+.carouselSection{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40%;
+}
+
+
 .carouselHeader {
     text-align: center;
     color: white;
@@ -80,6 +92,7 @@
 .errorContainer {
     margin: 2rem auto 5rem;
     width: 90%;
+    max-width: 1400px;
     min-height: 450px;
     background-color: rgba(0, 0, 0, .5);
     border-radius: 20px;
@@ -162,6 +175,9 @@
 }
 
 @media (max-width: 1130px) {
+    .carouselSection{
+        gap: 10px
+    }
     .carouselItem a {
         flex-direction: column;
         position: relative;
